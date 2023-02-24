@@ -16,9 +16,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 function UserInputs() {
-
+  //require("dotenv").config();
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.API_KEY ,
   });
   
   const openai = new OpenAIApi(configuration);
@@ -113,7 +113,7 @@ function UserInputs() {
             value={TargetAudience}
             onChange={(e) => setTargetAudience(e.target.value)}
             placeholder="Enter target segment"
-            className="w-full h-10  p-2 focus:outline-[#A259FF] rounded-md"
+            className="w-full h-10  p-2 focus:outline-[#1ACE66] rounded-md"
           ></input>
         </div>
 
@@ -136,7 +136,7 @@ function UserInputs() {
                 />
                 <label
                   for="hosting-small"
-                  class="inline-flex items-center justify-between w-full py-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  class="inline-flex items-center justify-between w-full py-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <div class="block">
                     <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Happy</div>
@@ -155,7 +155,7 @@ function UserInputs() {
                 />
                 <label
                   for="sad"
-                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <div class="block">
                     <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Sad</div>
@@ -174,7 +174,7 @@ function UserInputs() {
                 />
                 <label
                   for="hosting-normal"
-                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <div class="block">
                     <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Angry </div>
@@ -192,7 +192,7 @@ function UserInputs() {
                 />
                 <label
                   for="hosting-big"
-                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <div class="block">
                     <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Fear</div>
@@ -210,7 +210,7 @@ function UserInputs() {
                 />
                 <label
                   for="surprise"
-                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                  class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
                 >
                   <div class="block">
                     <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">
@@ -235,7 +235,7 @@ function UserInputs() {
             value = {communicate}
             onChange={(e) => setCommunicate(e.target.value)}
               id="countries"
-              class="bg-gray-50 border-b-2 border-b-[#A259FF] w-72 focus:outline-[#A259FF]  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              class="bg-gray-50 border-b-2 border-b-[#1ACE66] w-72 focus:outline-[#1ACE66]  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option selected value="E-commerce/D2C">E-commerce/D2C</option>
               <option value="Finance">Finance </option>
@@ -260,7 +260,7 @@ function UserInputs() {
           onChange={(e) => setGoal(e.target.value)}
             type="text"
             placeholder="Get users to open the app"
-            className=" h-10 p-2 focus:outline-[#A259FF] rounded-md"
+            className=" h-10 p-2 focus:outline-[#1ACE66] rounded-md"
           ></input>
         </div>
 
@@ -282,7 +282,7 @@ function UserInputs() {
               />
               <label
                 for="hosting-funny"
-                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <div class="block">
                   <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Funny</div>
@@ -300,7 +300,7 @@ function UserInputs() {
               />
               <label
                 for="Serious"
-                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <div class="block">
                   <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Serious</div>
@@ -319,7 +319,7 @@ function UserInputs() {
               />
               <label
                 for="hosting-urgency"
-                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <div class="block">
                   <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">Urgency </div>
@@ -337,7 +337,7 @@ function UserInputs() {
               />
               <label
                 for="emotional"
-                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#A259ff] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+                class="inline-flex items-center justify-between w-full p-2 text-gray-500 peer-checked:border-b-2  border-r-0 border-t-0 border-l-0  cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#1ACE66] peer-checked:text-black  hover:text-gray-600  dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <div class="block">
                   <div class="w-full text-lg  bg-[ #A0A2A4] pr-3">
@@ -355,7 +355,7 @@ function UserInputs() {
           >
             Message
           </label>
-          <input type="text" className="p-2 focus:outline-[#A259ff] " />
+          <input type="text" className="p-2 focus:outline-[#1ACE66] " />
         </div>
      
         <div className=" text-white p-4">
@@ -372,39 +372,39 @@ function UserInputs() {
 
         <div className="bg-[#D9D9D966] mt-2 p-4">
           <div className="flex items-center justify-around pt-2 mt-2 ">
-            <p className=" border-2 border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#A259FF] ">
+            <p className=" border-2 border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#1ACE66] ">
               Message Title
             </p>
             <p className="bg-white w-2/5 rounded p-2"> {response[0]}</p>
             <CopyToClipboard text={response[0]} onCopy={() => setCopied(true)}>
             <button>
-            <p className="bg-[#A259FF] text-white p-1 px-3 rounded" >Copy</p>
+            <p className="bg-[#1ACE66] text-white p-1 px-3 rounded" >Copy</p>
             </button>
             </CopyToClipboard>
             
 
           </div>
           <div className="flex items-center justify-around pt-2 mt-2 ">
-            <p className="border border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#A259FF] ">
+            <p className="border border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#1ACE66] ">
               Messgae Text
             </p>
             <p className="bg-white w-2/5 rounded p-2">{response[1]}</p>
             <CopyToClipboard text={response[1]} onCopy={() => setCopied(true)}>
             <button>
-            <p className="bg-[#A259FF] text-white p-1 px-3 rounded" >Copy</p>
+            <p className="bg-[#1ACE66] text-white p-1 px-3 rounded" >Copy</p>
             </button>
             </CopyToClipboard>
            
           </div>
 
           <div className="flex items-center justify-around pt-2 mt-2 ">
-            <p className="border border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#A259FF] ">
+            <p className="border border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#1ACE66] ">
               Message CTA
             </p>
             <p className="bg-white w-2/5 rounded p-2">{response[2]}</p>
             <CopyToClipboard text={response[2]} onCopy={() => setCopied(true)}>
             <button>
-            <p className="bg-[#A259FF] text-white p-1 px-3 rounded" >Copy</p>
+            <p className="bg-[#1ACE66] text-white p-1 px-3 rounded" >Copy</p>
             </button>
             </CopyToClipboard>
           </div>
@@ -444,7 +444,7 @@ function UserInputs() {
         <div className="flex justify-center">
           <button
             type="button"
-            className="text-black bg-white hover:bg-[#A259FF] hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold text-sm px-5 py-2.5 rounded-l-full mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            className="text-black bg-white hover:bg-[#1ACE66] hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold text-sm px-5 py-2.5 rounded-l-full mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
             onClick={() => setPlatform("Android")}
           >
             Android
@@ -452,7 +452,7 @@ function UserInputs() {
           <button
             type="button"
             onClick={() => setPlatform("Apple")}
-            className=" bg-[#A259FF] text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-bold rounded-r-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            className=" bg-[#1ACE66] text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-bold rounded-r-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
           >
             IOS
           </button>
@@ -460,13 +460,13 @@ function UserInputs() {
           <button
             type="button"
             onClick={() => setDarkmode("Darkmode")}
-            className="text-black bg-white hover:bg-[#A259FF] hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold text-sm px-5 py-2.5 rounded-l-full mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+            className="text-black bg-white hover:bg-[#1ACE66] hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold text-sm px-5 py-2.5 rounded-l-full mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
           >
             Dark
           </button>
           <button
             type="button"
-            className=" bg-[#A259FF] text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-bold rounded-r-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+            className=" bg-[#1ACE66] text-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-bold rounded-r-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             onClick={() => setDarkmode("Lightmode")}
           >
             Light

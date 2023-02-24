@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Growth from "./components/Growth";
 
 const inter = Inter({ subsets: ["latin"] });
-
+//require('dotenv').config();
 export default function Home() {
   return (
     <div className="">
