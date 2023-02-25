@@ -12,7 +12,7 @@ function Growth() {
 
   return (
     <div className="m-10   ">
-      <p className="text-[#A259FF] font-semibold text-2xl mx-6">
+      <p className="text-[#1ACE66] font-semibold text-2xl mx-6">
         The next viral campaign is just a click away...
       </p>
       <p className="text-[#000]  text-xl py-4 mx-6">

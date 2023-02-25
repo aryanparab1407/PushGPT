@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <div className="flex text-xl justify-evenly items-center h-24 p-3">
       <Link href={""}>
-        <p className="p-2 m-1 border-2 border-r-0 border-l-0 border-t-0 border-[#A259FF]">PushGPT</p>
+        <p className="p-2 m-1 border-2 border-r-0 border-l-0 border-t-0 border-[#1ACE66]">PushGPT</p>
       </Link>
       <Link href={""}>
         <p className="p-2 m-1">Springwood</p>
