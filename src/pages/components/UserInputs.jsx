@@ -18,7 +18,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 function UserInputs() {
   //require("dotenv").config();
   const configuration = new Configuration({
-    apiKey: process.env.API_KEY ,
+    apiKey: "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" ,
   });
   
   const openai = new OpenAIApi(configuration);
