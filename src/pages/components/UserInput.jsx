@@ -263,7 +263,7 @@ function UserInput() {
       </div>
     {/* </div> */}
      {/* */} 
-      <MobileDemo/>
+      
     </>
   );
 }
