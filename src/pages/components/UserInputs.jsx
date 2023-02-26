@@ -7,8 +7,6 @@ import { useEffect } from "react";
 import axios from "axios";
 //import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
-import API_KEY from '../api/apikey';
-
 import Android from "public/Android1.png";
 import Apple from "public/iphone1.png";
 import favicon from "public/favicon.png";
@@ -18,11 +16,15 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 function UserInputs() {
   //require("dotenv").config();
+  
   const configuration = new Configuration({
-    apiKey:API_KEY,
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
   });
+
+  
   
   const openai = new OpenAIApi(configuration);
+  
 
   const [platform, setPlatform] = React.useState("Android");
   const [darkmode, setDarkmode] = React.useState("Darkmode");
@@ -44,7 +46,6 @@ function UserInputs() {
   ]);
 
   
-  console.log({TargetAudience});
 
   async function handleSubmit(){
     // e.preventDefault();
@@ -58,7 +59,7 @@ function UserInputs() {
         setQuote("");
         setQuoteLoadingError(false);
         setQuoteLoading(true);
-      console.log("Hi")
+      
       const response = await openai.createCompletion({
               model: "text-davinci-003",
               // prompt:"tell me a joke",
@@ -70,12 +71,12 @@ function UserInputs() {
               top_p: 1
             });
       //const response= prompt
-        console.log(response)
+     
         //const body = await response.json();
 
         //setQuote(body.quote);
         const newstr = response.data?.choices[0].text.replace(/'/g, `\'`);
-        console.log(newstr);
+        
 //     console.log(newstr);
        const array = JSON.parse(newstr);
 
