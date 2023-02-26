@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 //import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
+import API_KEY from '../api/apikey';
 
 import Android from "public/Android1.png";
 import Apple from "public/iphone1.png";
@@ -18,7 +19,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 function UserInputs() {
   //require("dotenv").config();
   const configuration = new Configuration({
-    apiKey: "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" ,
+    apiKey:API_KEY,
   });
   
   const openai = new OpenAIApi(configuration);
