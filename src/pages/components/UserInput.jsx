@@ -1,5 +1,5 @@
 import React from "react";
-import MobileDemo from "./MobileDemo";
+
 
 function UserInput() {
   return (
