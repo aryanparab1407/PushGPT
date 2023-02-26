@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 //import type { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
-import MobileDemo from "./MobileDemo";
+
 import Android from "public/Android1.png";
 import Apple from "public/iphone1.png";
 import favicon from "public/favicon.png";
