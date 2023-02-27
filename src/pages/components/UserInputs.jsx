@@ -45,7 +45,11 @@ function UserInputs() {
     "Claim your discount now!  ",
   ]);
 
-  
+  if(copied)
+  {
+    setTimeout(() => {  setCopied(false); }, 2500);
+   
+  }
 
   async function handleSubmit(){
     // e.preventDefault();
@@ -54,6 +58,7 @@ function UserInputs() {
     const prompt =  `I want a creative solution,use quotes or dialoges from movies or anything, My target audience is ${TargetAudience}. I want the emotion of the message to be ${Emotion}. The goal of the message should be to communicate ${goal}. I am offering ${communicate}. The tone of the message should be ${tone}. Please create a message with three parts: a message title, a message subtitle, and a call to action. Please present the this as an array , with each part in a separate element. we dont need the labels and use double quotes for the text with emojis `
     const array ={}
     console.log(prompt)
+   
     if (prompt) {
       try {
         setQuote("");
@@ -100,7 +105,9 @@ function UserInputs() {
         <meta name="description" content="By SpringWood Labs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+      
       </Head>
+   
       <div className="w-2/3 m-6 rounded-lg">
         <div className="bg-[#D9D9D966] flex w-full rounded-lg justify-around p-4 ">
         <div className="flex flex-col items-start">
@@ -365,12 +372,13 @@ function UserInputs() {
             handleSubmit()
           }} >CREATE</p>
         </div>
-        {quoteLoading && <Spinner animation='border' />}
-          {quoteLoadingError && "Something went wrong. Please try again."}
-          
-      
+        {quoteLoading && <p>Generating Your Notification</p>}
+        {quoteLoadingError && "Something went wrong. Please try again."}
+
       </div>
+
         </div>
+        
 
         <div className="bg-[#D9D9D966] mt-2 p-4">
           <div className="flex items-center justify-around pt-2 mt-2 ">
@@ -409,7 +417,11 @@ function UserInputs() {
             <p className="bg-[#1ACE66] text-white p-1 px-3 rounded" >Copy</p>
             </button>
             </CopyToClipboard>
+
           </div>
+          <br></br>
+          {copied && <p color="#1ACE66">Copied to Clipboard</p>}
+      
         </div>
       </div>
 
@@ -434,6 +446,7 @@ function UserInputs() {
           {response[2]}
           </p>
         </div>
+       
         {platform === "Android" ? (
           <Image
             src={Android}
@@ -503,6 +516,7 @@ function UserInputs() {
       </div>
     </div>
       </div>
+     
 
 
       
