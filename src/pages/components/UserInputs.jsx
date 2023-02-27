@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { Form, Button, Spinner } from 'react-bootstrap'
+import { Form,  Spinner } from 'react-bootstrap'
 import { FormEvent, useState } from 'react'
 import Image from "next/image";
 import { useEffect } from "react";
@@ -11,8 +11,8 @@ import Android from "public/Android1.png";
 import Apple from "public/iphone1.png";
 import favicon from "public/favicon.png";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
-
+import ClipLoader from "react-spinners/ClipLoader"
+//import { Checkmark } from 'react-checkmark'
 
 function UserInputs() {
   //require("dotenv").config();
@@ -25,13 +25,18 @@ function UserInputs() {
   
   const openai = new OpenAIApi(configuration);
   
-
+  
   const [platform, setPlatform] = React.useState("Android");
   const [darkmode, setDarkmode] = React.useState("Darkmode");
 
   const[quote, setQuote] = useState("");
   const[quoteLoading, setQuoteLoading] = useState(false);
   const[quoteLoadingError, setQuoteLoadingError] = useState(false);
+  const[loaded,setLoaded] = useState(false);
+  // const[copied1, setCopied1] = useState(false)
+  // const[copied2, setCopied2] = useState(false)
+  // const[copied3, setCopied3] = useState(false)
+
   const[copied, setCopied] = useState(false)
 
   const [TargetAudience, setTargetAudience] = React.useState("20 year old");
@@ -49,6 +54,11 @@ function UserInputs() {
   {
     setTimeout(() => {  setCopied(false); }, 2500);
    
+  }
+
+  if(loaded)
+  {
+    setTimeout(() => {  setLoaded(false); }, 2500);
   }
 
   async function handleSubmit(){
@@ -86,12 +96,13 @@ function UserInputs() {
        const array = JSON.parse(newstr);
 
        setResponse(array);
-
+       setLoaded(true);
       } catch (error) {
         console.error(error);
         setQuoteLoadingError(true);
       } finally {
         setQuoteLoading(false);
+        
       }
     }
   }
@@ -372,9 +383,9 @@ function UserInputs() {
             handleSubmit()
           }} >CREATE</p>
         </div>
-        {quoteLoading && <p>Generating Your Notification</p>}
+        {quoteLoading && <ClipLoader color={'#1ACE66'}></ClipLoader>}
+        {loaded && <h1 className="text-[#1ACE66] text-bold font-40px">&#x2713;</h1>}
         {quoteLoadingError && "Something went wrong. Please try again."}
-
       </div>
 
         </div>
@@ -412,15 +423,21 @@ function UserInputs() {
               Message CTA
             </p>
             <p className="bg-white w-2/5 rounded p-2">{response[2]}</p>
+           
             <CopyToClipboard text={response[2]} onCopy={() => setCopied(true)}>
+
             <button>
             <p className="bg-[#1ACE66] text-white p-1 px-3 rounded" >Copy</p>
+            
             </button>
+            
             </CopyToClipboard>
+            
+          </div> 
 
-          </div>
-          <br></br>
-          {copied && <p color="#1ACE66">Copied to Clipboard</p>}
+          {copied &&<div className=" text-bold text-[#1ACE66] text-right">Copied</div>}
+
+         
       
         </div>
       </div>
@@ -515,6 +532,7 @@ function UserInputs() {
         </div>
       </div>
     </div>
+   
       </div>
      
 
