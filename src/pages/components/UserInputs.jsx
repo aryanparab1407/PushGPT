@@ -44,6 +44,7 @@ function UserInputs() {
   const [goal, setGoal] = React.useState("");
   const [communicate, setCommunicate] = React.useState("");
   const [tone, setTone] = React.useState("");
+  const [message, setMessage] = React.useState("");
   const [response, setResponse] = React.useState([
     "We have been lost without you!",
     "Come back to us and recieve 40% off,our shining star  ",
@@ -65,7 +66,7 @@ function UserInputs() {
     // e.preventDefault();
     // const formData = new FormData(e.target);
     //const promptt = formData.get("prompt")?.toString().trim();
-    const prompt =  `I want a creative solution,use quotes or dialoges from movies or anything, My target audience is ${TargetAudience}. I want the emotion of the message to be ${Emotion}. The goal of the message should be to communicate ${goal}. I am offering ${communicate}. The tone of the message should be ${tone}. Please create a message with three parts: a message title, a message subtitle, and a call to action. Please present the this as an array , with each part in a separate element. we dont need the labels and use double quotes for the text with emojis `
+    const prompt =  `I want a creative solution,use quotes or dialoges from movies or anything, My target audience is ${TargetAudience}. I want the emotion of the message to be ${Emotion}. The goal of the message should be to communicate ${goal}. I am offering ${communicate}. The tone of the message should be ${tone}. Please create a message with three parts: a message title, a message subtitle, and a call to action. Please present the this as an array , with each part in a separate element. we dont need the labels and use double quotes for the text with emojis. Message to convey from notification is ${message}`
     const array ={}
     console.log(prompt)
    
@@ -375,7 +376,8 @@ function UserInputs() {
           >
             Message
           </label>
-          <input type="text" className="p-2 focus:outline-[#1ACE66] " />
+          <input value= {message}
+          onChange={(e) => setMessage(e.target.value)} type="text" className="p-2 focus:outline-[#1ACE66] " />
         </div>
      
         <div className=" text-white p-4">
