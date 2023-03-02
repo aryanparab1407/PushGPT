@@ -376,7 +376,8 @@ function UserInputs() {
           >
             Message
           </label>
-          <input value= {message}
+          <input value= {message} 
+          placeholder ="Message you want to convey to the user"
           onChange={(e) => setMessage(e.target.value)} type="text" className="p-2 focus:outline-[#1ACE66] " />
         </div>
      
@@ -409,7 +410,7 @@ function UserInputs() {
           </div>
           <div className="flex items-center justify-around pt-2 mt-2 ">
             <p className="border border-r-0 border-l-0 font-bold p-1 text-center border-t-0 border-[#1ACE66] ">
-              Messgae Text
+              Message Text
             </p>
             <p className="bg-white w-2/5 rounded p-2">{response[1]}</p>
             <CopyToClipboard text={response[1]} onCopy={() => setCopied(true)}>
